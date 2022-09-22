@@ -1,4 +1,4 @@
-import { StandardProps } from "../../../types/common";
+import { StandardProps } from "../../types/common";
 import { ISendTicketProps } from "../sendTicket/types";
 
 export type test = {};

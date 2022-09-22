@@ -24,6 +24,9 @@ module.exports = {
     spacing: {
       ...customSpacing
     },
+    fontFamily: {
+      sans: ["IranSans", ...defaultTheme.fontFamily.sans]
+    },
 
     extend: {
       boxShadow: {

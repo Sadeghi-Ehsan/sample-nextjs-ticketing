@@ -1,4 +1,4 @@
-import { StandardProps } from "../../../types/common";
+import { StandardProps } from "../../types/common";
 
 export type test = {};
 

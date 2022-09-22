@@ -1,1 +1,15 @@
 @import "./tailwind.css";
+
+@font-face {
+  font-family: "IranSans";
+  src: url("../font/IRANSansRegular.ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("../font/IRANSansBold.ttf");
+  font-weight: 700;
+  font-style: bold;
+}
