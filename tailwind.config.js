@@ -47,7 +47,8 @@ module.exports = {
         neutral400: { DEFAULT: "#F9F9F9", border: "#A9A9B2" },
         borderColor: "#9499C5",
         ticketResponse: "#FFF2F2",
-        ticketReply: "#F5F5F5"
+        ticketReply: "#F5F5F5",
+        linkColor: "#0E5FCC"
       }
     }
   },

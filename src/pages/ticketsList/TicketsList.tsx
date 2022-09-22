@@ -1,9 +1,12 @@
-import { FunctionComponent } from "react";
+import { NextPage } from "next";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import chevron from "../../assets/icons/chevron.png";
+import tic from "../../assets/icons/tic.png";
+import wait from "../../assets/icons/wait.png";
 import { classJoin } from "../../utils/helper";
 import { ISendTicketProps } from "../sendTicket/types";
 import { ITicketsListProps } from "./types";
-import { useRouter } from "next/router";
-import { NextPage } from "next";
 
 const TicketsList: NextPage<ITicketsListProps> = ({ list, className, style, ...restProps }) => {
   const tableList: ISendTicketProps[] = [
@@ -39,12 +42,16 @@ const TicketsList: NextPage<ITicketsListProps> = ({ list, className, style, ...r
                 <div>{item.id}</div>
                 <div>{item.message}</div>
                 <div>{item.title}</div>
-                <div>{item.title}</div>
+                <div className="flex items-center">
+                  <Image src={item?.id % 2 === 0 ? tic : wait} width="16" height="16" alt="Icon" />{" "}
+                  <span className="px-2">{item.title}</span>
+                </div>
                 <div
-                  className="opacity-0 duration-300 group-hover:opacity-100 "
+                  className="flex items-center opacity-0 duration-300 group-hover:opacity-100 "
                   onClick={() => router.push("/ticketDetails/TicketDetails")}
                 >
-                  مشاهده جزئیات
+                  <span className="px-1 text-xs text-linkColor">مشاهده جزئیات</span>
+                  <Image src={chevron} alt="icon" width={5} height={11} />
                 </div>
               </div>
             );

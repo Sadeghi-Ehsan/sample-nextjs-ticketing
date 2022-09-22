@@ -2,14 +2,14 @@
 
 @font-face {
   font-family: "IranSans";
-  src: url("../font/IRANSansRegular.ttf");
+  src: url("../assets/fonts/IRANSansRegular.ttf");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "IranSans";
-  src: url("../font/IRANSansBold.ttf");
+  src: url("../assets/fonts/IRANSansBold.ttf");
   font-weight: 700;
   font-style: bold;
 }
