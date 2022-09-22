@@ -10,15 +10,6 @@ const customSpacing = {
 module.exports = {
   content: ["./src/pages/**/*.{js,ts,jsx,tsx}", "./src/components/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    colors: {
-      inherit: "inherit",
-      current: "currentColor",
-      transparent: "transparent",
-      black: "#000",
-      white: "#fff",
-      pailred: "#F41D50",
-      neutral400: { DEFAULT: "#F9F9F9", border: "#A9A9B2" }
-    },
     borderRadius: {
       ...defaultTheme.borderRadius,
       "4xl": "2rem", // 32px
@@ -27,7 +18,6 @@ module.exports = {
       xl: "0.75rem", // 12px
       llg: "0.625rem", // 10px
       half: "50%",
-      xxxl: "1.0625rem",
       "2.5xl": "1.0625rem" //17px
     },
 
@@ -35,7 +25,28 @@ module.exports = {
       ...customSpacing
     },
 
-    extend: {}
+    extend: {
+      boxShadow: {
+        customLg: "0px 1px 8px 1px rgba(188, 183, 183, 0.25)",
+        customXl: "1px 1px 5px 1px rgba(60, 78, 78, 0.25)"
+      },
+      scale: {
+        102: "1.02"
+      },
+      colors: {
+        inherit: "inherit",
+        current: "currentColor",
+        transparent: "transparent",
+        black: "#000",
+        white: "#fff",
+        pailred: "#F41D50",
+        tableGray: "#EEEEEE",
+        neutral400: { DEFAULT: "#F9F9F9", border: "#A9A9B2" },
+        borderColor: "#9499C5",
+        ticketResponse: "#FFF2F2",
+        ticketReply: "#F5F5F5"
+      }
+    }
   },
   plugins: []
 };
