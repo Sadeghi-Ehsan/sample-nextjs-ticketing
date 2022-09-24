@@ -2,7 +2,7 @@ import { StandardProps } from "../../types/common";
 
 export enum status {
   pending = "pending",
-  answerd = "answerd",
+  answered = "answered",
   closed = "closed"
 }
 
@@ -14,16 +14,16 @@ export interface ISendTicketProps extends Omit<StandardProps, "children"> {
   received: string;
 
   /** this is title of the message */
-  title: string;
+  title?: string;
 
   /**this is the body of the message */
-  message: string;
+  message?: string;
 
   /** this is a handler for submitting the form */
-  onClick: () => void;
+  onClick?: () => void;
 
   /** status of the message */
-  status: status;
+  status?: status;
 
   /** latest Update of ticket */
   lastUpdate: string;

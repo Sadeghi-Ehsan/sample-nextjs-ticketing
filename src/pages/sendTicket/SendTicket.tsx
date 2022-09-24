@@ -6,16 +6,7 @@ import { classJoin } from "../../utils/helper";
 import { ISendTicketProps } from "./types";
 import { aggregateTickets } from "./utils";
 
-const SendTicket: NextPage<ISendTicketProps> = ({
-  message,
-  onClick,
-  title,
-  received,
-  uid,
-  className,
-  style,
-  ...restProps
-}) => {
+const SendTicket: NextPage<ISendTicketProps> = ({ className, style, ...restProps }) => {
   const router = useRouter();
   const {
     register,
@@ -50,12 +41,8 @@ const SendTicket: NextPage<ISendTicketProps> = ({
   };
 
   return (
-    <div
-      className={classJoin(["flex rounded-2.5xl bg-neutral400", className])}
-      style={{ width: "1170px", minHeight: "577px" }}
-      {...restProps}
-    >
-      <div className="w-full px-14 pt-8">
+    <div className={classJoin(["flex rounded-2.5xl bg-neutral400", className])} style={style} {...restProps}>
+      <div className="w-full px-14 py-8">
         <h1 className="text-2xl font-bold">ایجاد تیکت جدید</h1>
         <form onSubmit={handleSubmit(handleRegistration, handleError)}>
           <div className="mt-13 flex flex-col">
