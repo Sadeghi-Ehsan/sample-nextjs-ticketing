@@ -34,7 +34,7 @@ module.exports = {
         customXl: "1px 1px 5px 1px rgba(60, 78, 78, 0.25)"
       },
       scale: {
-        102: "1.02"
+        101: "1.01"
       },
       colors: {
         inherit: "inherit",

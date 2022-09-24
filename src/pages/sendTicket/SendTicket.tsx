@@ -1,9 +1,10 @@
-import { FunctionComponent, useId } from "react";
+import { NextPage } from "next";
+import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
+import { v4 as uuidv4 } from "uuid";
 import { classJoin } from "../../utils/helper";
 import { ISendTicketProps } from "./types";
-import { useRouter } from "next/router";
-import { NextPage } from "next";
+import { aggregateTickets } from "./utils";
 
 const SendTicket: NextPage<ISendTicketProps> = ({
   message,
@@ -21,9 +22,12 @@ const SendTicket: NextPage<ISendTicketProps> = ({
     handleSubmit,
     formState: { errors }
   } = useForm();
-  const id = useId();
   const handleRegistration = (data: any) => {
-    console.log({ ...data, id });
+    let received = new Date().toISOString().replace(/T/, " ").replace(/\..+/, "");
+    let status = "pending";
+    let ticketData = { id: uuidv4(), received, ...data, status };
+    aggregateTickets(ticketData);
+
     router.push("/ticketsList/TicketsList");
   };
   const handleError = () => {};
@@ -44,6 +48,7 @@ const SendTicket: NextPage<ISendTicketProps> = ({
       }
     }
   };
+
   return (
     <div
       className={classJoin(["flex rounded-2.5xl bg-neutral400", className])}
